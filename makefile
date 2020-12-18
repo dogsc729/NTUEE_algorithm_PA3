@@ -14,7 +14,7 @@ all	: bin/cb
 
 # optimized version 
 bin/cb : src/main.cpp
-	$(CC) -std=c++11 -Wall -Wextra -Werror $^ -o $@
+	$(CC) -O3 $^ -o $@
 
 # clean all the .o and executable files
 clean:
