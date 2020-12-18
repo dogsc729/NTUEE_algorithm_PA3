@@ -20,6 +20,12 @@ void help_message()
 {
     cout << "usage: ./cb <input file name> <output file name>" << endl;
 }
+void ugraph_cyc_detection()
+{
+}
+void dgraph_cyc_detection()
+{
+}
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +37,12 @@ int main(int argc, char *argv[])
     fstream fin(argv[1]);
     fstream fout;
     fout.open(argv[2], ios::out);
-    char identifier;
+    string identifier;
+    getline(fin, identifier);
+    if (identifier == "u")
+        ugraph_cyc_detection();
+    else
+        dgraph_cyc_detection();
     fin.close();
     fout.close();
     return 0;
