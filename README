@@ -1,0 +1,29 @@
+This is README file for Algorithm PA#3
+Author: Shu-Yu Lin B07611033
+Date: 2021/01/16
+=====
+SYNOPSIS:
+
+./cb <input file name> <output file name>
+
+This program supports for cycle breaking.
+=====
+DIRECTORY:
+
+bin/	  executable binary
+doc/	  reports
+inputs/   input data 
+outputs/  output result
+src/ 	  source C++ codes
+utilities/  checker
+======
+HOW TO COMPILE:
+
+Then compile the demo, simply follow the following steps
+	make
+======
+HOW TO RUN:
+	under <student_id>_pa2
+	./bin/cb inputs/public_case_1.in outputs/public_case_1.out
+======
+OTHER NOTICE:
