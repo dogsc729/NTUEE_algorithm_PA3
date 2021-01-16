@@ -16,14 +16,21 @@
 #include <map>
 
 using namespace std;
+struct Edge
+{
+    int start_v;
+    int end_v;
+    int weight;
+};
+
 void help_message()
 {
     cout << "usage: ./cb <input file name> <output file name>" << endl;
 }
-void ugraph_cyc_detection()
+void ugraph_cyc_detection(fstream &, fstream &)
 {
 }
-void dgraph_cyc_detection()
+void dgraph_cyc_detection(fstream &, fstream &)
 {
 }
 
@@ -38,11 +45,17 @@ int main(int argc, char *argv[])
     fstream fout;
     fout.open(argv[2], ios::out);
     string identifier;
-    getline(fin, identifier);
-    if (identifier == "u")
-        ugraph_cyc_detection();
-    else
-        dgraph_cyc_detection();
+    int num_of_vertices;
+    int num_of_edges;
+    fin >> identifier >> num_of_vertices >> num_of_edges;
+    vector<Edge> edges;
+    for (int i = 0; i < num_of_edges; i++)
+    {
+        int start_v;
+        int end_v;
+        int weight;
+        fin >> start_v >> end_v >> weight;
+    }
     fin.close();
     fout.close();
     return 0;
