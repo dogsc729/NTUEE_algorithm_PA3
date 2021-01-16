@@ -79,7 +79,7 @@ void kruskal_u(vector<Edge> &arr, int m, fstream &fout)
     int n = arr.size();
     int removed_weight = 0;
     vector<Edge> removed_edges;
-    cout << m << " " << n << endl;
+    //cout << m << " " << n << endl;
     sort(arr.begin(), arr.end(), compare);
     vector<int> root(m);
     for (int i = 0; i < m; i++)
@@ -114,7 +114,7 @@ void kruskal_d(vector<Edge> &arr, int m, fstream &fout)
     vector<Edge> removed_edges;
     vector<Edge> remained_edges;
     vector<Edge> test_edges;
-    cout << m << " " << n << endl;
+    //cout << m << " " << n << endl;
     sort(arr.begin(), arr.end(), compare);
     vector<int> root(m);
     for (int i = 0; i < m; i++)
@@ -197,10 +197,10 @@ void kruskal_d(vector<Edge> &arr, int m, fstream &fout)
             fout << removed_edges[i].start_v << " " << removed_edges[i].end_v << " " << removed_edges[i].weight << endl;
         }
     }
-    for (int i = 0; i < remained_edges.size(); i++)
+    /*for (int i = 0; i < remained_edges.size(); i++)
     {
         cout << remained_edges[i].start_v << " " << remained_edges[i].end_v << endl;
-    }
+    }*/
 }
 
 void help_message()
@@ -222,6 +222,14 @@ int main(int argc, char *argv[])
     int num_of_vertices;
     int num_of_edges;
     fin >> identifier >> num_of_vertices >> num_of_edges;
+    if (identifier == "u")
+    {
+        cout << "this is a undirected graph with " << num_of_vertices << " vertices and " << num_of_edges << " edges" << endl;
+    }
+    else
+    {
+        cout << "this is a directed graph with " << num_of_vertices << " vertices and " << num_of_edges << " edges" << endl;
+    }
     vector<Edge> edges;
     if (identifier == "u")
     {
