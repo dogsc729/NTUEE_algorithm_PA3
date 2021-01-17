@@ -46,7 +46,7 @@ int findroot(vector<int> root, int x)
     return x;
 }
 
-bool cycle_detect_BFS(int s, int n, vector<vector<int>> adj_list)
+bool BFS(int s, int n, vector<vector<int>> adj_list)
 {
     bool colored[n]; //number of vertices,colored or not
     for (int i = 0; i < n; i++)
@@ -113,7 +113,6 @@ void kruskal_d(vector<Edge> &arr, int m, fstream &fout)
     int n = arr.size();
     vector<Edge> removed_edges;
     vector<Edge> remained_edges;
-    vector<Edge> test_edges;
     //cout << m << " " << n << endl;
     sort(arr.begin(), arr.end(), compare);
     vector<int> root(m);
@@ -163,7 +162,7 @@ void kruskal_d(vector<Edge> &arr, int m, fstream &fout)
         //add the removed edge into the remaining edges
         remained_edges.push_back(removed_edges[i]);
         //check if cycle exist
-        if (cycle_detect_BFS(removed_edges[i].start_v, m, adj_list) == true)
+        if (BFS(removed_edges[i].start_v, m, adj_list) == true)
         //remove testing edges
         {
             //cout << "fuck" << endl;
@@ -245,7 +244,6 @@ int main(int argc, char *argv[])
     }
     if (identifier == "d")
     {
-        vector<Edge> removed_edges;
         for (int i = 0; i < num_of_edges; i++)
         {
             int start_v;
